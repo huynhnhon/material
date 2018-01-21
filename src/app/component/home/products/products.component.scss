@@ -1,0 +1,38 @@
+.example-container {
+    display: flex;
+    flex-direction: column;    
+    min-width: 300px
+  }
+  
+  .mat-paginator {
+    border-radius: 0px 0px 4px 4px
+}
+  .example-header {
+    min-height: 64px;
+    padding: 8px 24px 0;
+    margin-bottom: 30px;
+    border-radius: 4px 4px 0px 0px;
+    background-color: #fff
+  }
+  
+  .mat-form-field {
+    font-size: 14px;
+    width: 100%;
+  }
+  
+  .mat-table {
+    overflow: auto;
+    max-height: 500px;
+  }
+
+  input#mat-input-0 {
+    color: #fff;
+}
+.mat-form-field-ripple {
+    background-color: #fafafa !important;
+}
+.products {
+    margin: 30px;
+    border-radius: 8px
+}
+  

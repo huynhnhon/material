@@ -1,0 +1,26 @@
+mat-list-item {
+  cursor: pointer;
+}
+
+.example-icon {
+  padding: 0 14px;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+.example-container {
+  position: absolute;
+  top:72px;
+  bottom: 0;
+  left: 8px;
+  right: 8px;
+}
+.mat-sidenav-content {  
+    background-image: url('../assets/home-body.jpg');
+    background-size: cover
+}
+.mat-sidenav {
+  background: rgba(0, 0, 0, 0.97)
+}
+
