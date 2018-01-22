@@ -32,14 +32,16 @@
     background-color: #fafafa !important;
 }
 .products {
-    margin: 30px;
-    border-radius: 8px
+    margin: 38px;
+    border-radius: 8px;
+    box-shadow: 0px 3px 62px 10px rgba(0,0,0,0.75);
 }
 .mat-fab {
   padding: 0px 16px !important;
   top: 59px;
   right: 11px;
   position: absolute;
-  font-size: 23px
+  font-size: 23px;
+  box-shadow: 0px 3px 40px 5px rgba(0,0,0,0.75);
 }
   

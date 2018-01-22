@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { MaterialModule } from './material.module';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -17,6 +18,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './component/home/home.component';
 import { MenuSidenavComponent } from './component/home/menu-sidenav/menu-sidenav.component';
 import { ProductsComponent } from './component/home/products/products.component';
+import { AddComponent } from './component/home/products/add/add.component';
 
 
 @NgModule({
@@ -24,12 +26,14 @@ import { ProductsComponent } from './component/home/products/products.component'
     AppComponent,
     HomeComponent,
     MenuSidenavComponent,
-    ProductsComponent
+    ProductsComponent,
+    AddComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    FormsModule,
     MaterialModule,
     AngularFireModule.initializeApp(environment.firebase),
     CoreModule,
@@ -37,6 +41,7 @@ import { ProductsComponent } from './component/home/products/products.component'
     AngularFirestoreModule
   ],
   providers: [AuthGuard],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [AddComponent]
 })
 export class AppModule { }

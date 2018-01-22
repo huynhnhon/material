@@ -1,0 +1,60 @@
+<form class="example-form" #product="ngForm" ngNativeValidate>
+  <table class="example-full-width" cellspacing="0">
+    <tr>
+      <td>
+        <mat-form-field [hideRequiredMarker]="false" class="example-full-width">
+          <input matInput placeholder="TÊN SẢN PHẨM" ngModel name="name" required>
+        </mat-form-field>
+      </td>
+    </tr>
+  </table>
+
+  <table class="example-full-width" cellspacing="0">
+    <tr>
+      <td style="margin-right: 5px;">
+        <mat-form-field [hideRequiredMarker]="false" class="example-full-width">
+          <input matInput placeholder="GIÁ BÁN (vnđ)" ngModel name="price" type="number" class="example-right-align" required>
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="KÍCH THƯỚC" ngModel name="size" class="example-right-align">
+        </mat-form-field>
+      </td>
+    </tr>
+  </table>
+  <table class="example-full-width" cellspacing="0">
+    <tr>
+      <td>
+        <mat-form-field class="example-full-width" style="width: 160px">
+          <input matInput placeholder="TRỌNG LƯỢNG" ngModel name="weight" type="number" class="example-right-align">
+          <span matSuffix>(g)</span>
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="example-full-width" style="width: 135px">
+          <input matInput placeholder="ĐƠN VỊ" ngModel name="unit" class="example-right-align">
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="DANH MỤC" ngModel name="category" class="example-right-align">
+          <span matPrefix>&nbsp;</span>
+          <span matSuffix></span>
+        </mat-form-field>
+      </td>
+    </tr>
+  </table>
+  <table class="example-full-width" cellspacing="0">
+    <tr>
+      <td>
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="MÔ TẢ" ngModel name="description">
+          <i style="cursor: pointer; float: right" class="material-icons">attach_file</i>
+        </mat-form-field>
+      </td>
+    </tr>
+  </table>
+  <button mat-raised-button [disabled]="product.invaild" color="primary" type="submit">Add</button>
+  <a mat-raised-button color="warn" (click)="onNoClick()">Cancel</a>
+</form>

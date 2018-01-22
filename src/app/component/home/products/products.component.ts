@@ -1,5 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
-import { MatPaginator, MatSort, MatTableDataSource } from '@angular/material';
+import { MatPaginator, MatSort, MatTableDataSource, MatDialog } from '@angular/material';
+import { AddComponent } from './add/add.component';
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
@@ -13,13 +14,18 @@ export class ProductsComponent {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
-  constructor() {
+  constructor(public dialog: MatDialog) {
     // Create 100 users
     const users: UserData[] = [];
     for (let i = 1; i <= 100; i++) { users.push(createNewUser(i)); }
 
     // Assign the data to the data source for the table to render
     this.dataSource = new MatTableDataSource(users);
+  }
+  public openDialog(): void {
+    let dialogRef = this.dialog.open(AddComponent, {
+      width: '550px',
+    });
   }
 
   /**
