@@ -1,17 +1,37 @@
-.mat-raised-button{
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%) 
+.mat-raised-button, .example-card.mat-card {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%)
 }
+
 i.fa.fa-google {
-    font-size: 24px
+  font-size: 24px
 }
+
 a.gg {
-    /* padding-left: 8px; */
-    margin-left: 4px;
-    /* border-left: rgb(255, 251, 251) solid 1px; */
-    font-weight: 500;
+  /* padding-left: 8px; */
+  margin-left: 4px;
+  /* border-left: rgb(255, 251, 251) solid 1px; */
+  font-weight: 500;
+}
+
+.example-card {
+  width: 300px
+}
+.example-card.mat-card, .mat-fab{
+    box-shadow: 0px 3px 62px 10px rgba(0,0,0,0.75);
+}
+
+.example-header-image {
+  background-size: cover;
+}
+.mat-fab {
+    padding: 0px 16px !important;
+    bottom: 20px;
+    right: 20px;
+    position: absolute;
+    font-size: 23px
 }
