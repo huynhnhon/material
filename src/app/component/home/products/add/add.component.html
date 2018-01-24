@@ -55,6 +55,6 @@
       </td>
     </tr>
   </table>
-  <button mat-raised-button [disabled]="product.invaild" color="primary" type="submit">Add</button>
+  <button (click)="addProduct($event)" mat-raised-button [disabled]="product.invaild" color="primary" type="submit">Add</button>
   <a mat-raised-button color="warn" (click)="onNoClick()">Cancel</a>
 </form>

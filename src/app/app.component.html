@@ -13,6 +13,7 @@
       <app-menu-sidenav></app-menu-sidenav>
   </mat-sidenav>
   <mat-sidenav-content>
-    <router-outlet></router-outlet>
+    
+    <router-outlet><mat-spinner *ngIf="showSpinner"></mat-spinner></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ProductsComponent } from './component/home/products/products.component';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'app';
+  private show: boolean = true;
+  // this.show = ProductsComponent.showSpinner();
 }

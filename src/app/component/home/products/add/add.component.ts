@@ -1,5 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
+import { ProductService } from '../../../../core/product.service'
 
 @Component({
   selector: 'app-add',
@@ -10,7 +11,7 @@ export class AddComponent implements OnInit {
 
   name: string = 'huynh'
 
-  constructor(public dialogRef: MatDialogRef<AddComponent>,
+  constructor(private product: ProductService, public dialogRef: MatDialogRef<AddComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any) { }
 
   onNoClick(): void {
@@ -18,6 +19,10 @@ export class AddComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  addProduct(event) {
+    this.product.log()
   }
 
 }
