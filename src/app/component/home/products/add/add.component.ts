@@ -1,6 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
-import { ProductService } from '../../../../core/product.service'
+import { ProductService } from '../../../../core/product.service';
+import { Product } from '../../../../models/Product';
 
 @Component({
   selector: 'app-add',
@@ -9,9 +10,13 @@ import { ProductService } from '../../../../core/product.service'
 })
 export class AddComponent implements OnInit {
 
-  name: string = 'huynh'
+  product: Product = {
+    name: '',
+    price: 0,
+    create_at: Date.now()
+  }
 
-  constructor(private product: ProductService, public dialogRef: MatDialogRef<AddComponent>,
+  constructor(private productService: ProductService, public dialogRef: MatDialogRef<AddComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any) { }
 
   onNoClick(): void {
@@ -21,8 +26,17 @@ export class AddComponent implements OnInit {
   ngOnInit() {
   }
 
-  addProduct(event) {
-    this.product.log()
+  onSubmit() {    
+    if (this.product.name !== '') {
+      this.productService.addProduct(this.product);
+      this.dialogRef.close();
+      this.product.name = '';
+      this.product.price = 0
+    }
+      // this.product.unit = '',
+      // this.product.weight = '',
+      // this.product.size = '',
+      // this.product.category = '',
+      // this.product.description = ''
   }
-
 }

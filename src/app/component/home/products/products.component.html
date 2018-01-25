@@ -1,7 +1,7 @@
 <div class="products" >
   <div class="example-header">
     <mat-form-field>
-      <input style="color: #fff" matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+      <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
     </mat-form-field>
   </div>
 
@@ -42,3 +42,6 @@
   </div>
 </div>
 <button color="warn" mat-fab (click)="openDialog()"><i class="fa fa-plus" aria-hidden="true"></i></button>
+<ul *ngFor="let product of products">
+<li>{{product.name}}</li>
+</ul>

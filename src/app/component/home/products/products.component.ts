@@ -1,6 +1,8 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild, OnInit } from '@angular/core';
 import { MatPaginator, MatSort, MatTableDataSource, MatDialog } from '@angular/material';
 import { AddComponent } from './add/add.component';
+import { ProductService } from '../../../core/product.service';
+import { Product } from '../../../models/Product';
 
 @Component({
   selector: 'app-products',
@@ -8,9 +10,11 @@ import { AddComponent } from './add/add.component';
   styleUrls: ['./products.component.scss']
 })
 
-export class ProductsComponent {
+export class ProductsComponent implements OnInit{
+  
+  products: Product[];
 
-  private hide: boolean = false;
+  hide: boolean = false;
   showSpinner(){
     return this.hide
   }
@@ -21,7 +25,7 @@ export class ProductsComponent {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
-  constructor(public dialog: MatDialog) {
+  constructor(public dialog: MatDialog, private productService: ProductService) {
     // Create 100 users
     const users: UserData[] = [];
     for (let i = 1; i <= 100; i++) { users.push(createNewUser(i)); }
@@ -29,6 +33,10 @@ export class ProductsComponent {
     // Assign the data to the data source for the table to render
     this.dataSource = new MatTableDataSource(users);
   }
+  ngOnInit() {
+    this.productService.getProducts()
+  }
+
   public openDialog(): void {
     let dialogRef = this.dialog.open(AddComponent, {
       width: '550px',

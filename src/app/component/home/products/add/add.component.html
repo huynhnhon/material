@@ -1,4 +1,4 @@
-<form class="example-form" #product="ngForm" ngNativeValidate>
+<!-- <form (ngSubmit)="onSubmit(products)" class="example-form" #product="ngForm" ngNativeValidate>
   <table class="example-full-width" cellspacing="0">
     <tr>
       <td>
@@ -55,6 +55,21 @@
       </td>
     </tr>
   </table>
-  <button (click)="addProduct($event)" mat-raised-button [disabled]="product.invaild" color="primary" type="submit">Add</button>
+  <button mat-raised-button [disabled]="product.invaild" color="primary" type="submit">Add</button>
   <a mat-raised-button color="warn" (click)="onNoClick()">Cancel</a>
-</form>
+</form> -->
+  <div>
+    <span>ADD PRODUCT</span>
+    <form (ngSubmit)="onSubmit()" class="col s6">
+        <mat-form-field>
+          <input matInput autofocus type="text" placeholder="Add-Title" [(ngModel)]="product.name" name="name">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput type="number" placeholder="Add-Price" [(ngModel)]="product.price" name="price">
+        </mat-form-field>
+        <button type="submit" mat-raised-button color="primary">
+          <strong style="font-size: 19px">SUBMIT </strong>
+          <i class="fa fa-arrow-circle-up" aria-hidden="true"></i>
+        </button>
+    </form>
+  </div>

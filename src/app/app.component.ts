@@ -7,6 +7,6 @@ import { ProductsComponent } from './component/home/products/products.component'
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  private show: boolean = true;
+  show: boolean = true;
   // this.show = ProductsComponent.showSpinner();
 }
